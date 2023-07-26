@@ -72,6 +72,9 @@ Whisper API and BHASHINI API are both popular APIs for ASR applications. However
 
 **API calls:** BHASHINI can be used to perform ASR, NMT, and TTS with a single API call. This makes BHASHINI a more efficient API for developers who need to perform multiple tasks. 
 
+## Features
+Vector database querying, text input via typing or recording audio, returns answer in both chosen language and english, saves and displays history of prompts, generates audio response.
+
 ## Conclusion
 
-BHASHINI is a powerful open-source API for ASR applications. It supports a wider range of languages than Whisper API, and it can be used to perform multiple tasks with a single API call. If you are looking for an API that can support a wide range of languages and tasks, BHASHINI is a good option.
+BHASHINI is a powerful open-source API for ASR/NMT/TTS applications. It supports a wider range of languages than Whisper API, and it can be used to perform multiple tasks with a single API call. If you are looking for an API that can support a wide range of languages and tasks, BHASHINI is a good option.

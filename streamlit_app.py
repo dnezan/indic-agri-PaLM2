@@ -405,10 +405,10 @@ with col1:
         if len(audio) > 0:
             try:
                 st.success("Recorded audio")
-                wav_file = open("audio.mp3", "wb")
+                wav_file = open("./audio/audio.mp3", "wb")
                 wav_file.write(audio.tobytes())
-                mp3_to_wav("audio.mp3", "audio_wav.wav")
-                enc = base64.b64encode(open("audio_wav.wav", "rb").read())
+                mp3_to_wav("./audio/audio.mp3", "./audio/audio_wav.wav")
+                enc = base64.b64encode(open("./audio/audio_wav.wav", "rb").read())
                 enc = enc.decode("utf-8")
                 #st.write(enc)
                 recorded_audio = bhashini_asr(enc, input_language, asr_serviceid_val)
@@ -433,7 +433,7 @@ with col1:
 
             with placeholder:
                 placeholder.empty()
-                lottie_progress = load_lottiefile("./lottieFiles/loading.json")
+                lottie_progress = load_lottiefile("./json/loading.json")
                 with st_lottie_spinner(lottie_progress, loop=True, key="progress", height=180):
                     try: 
                         if not prompt_from_user:
