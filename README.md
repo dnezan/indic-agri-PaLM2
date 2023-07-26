@@ -45,24 +45,33 @@ PaLM 2 is also open source, which means that it is available to anyone to use an
 
 Let us examine the capabilities of our proposed pipeline using PaLM 2 + BHASHINI.
 
+_Text querying_
 | Indic Language | GPT4 | PaLM 2  | PaLM 2 + BHASHINI |
 |---|---|---|---|
-| English | 🟢 | 🟢 | 🟢 |
-| Bengali | 🟢 | 🟢 | 🟢 |
-| Bodo |  |  | 🟢 |
-| Assamese | 🟢 |  | 🟢 |
-| Gujarati | 🟢 | 🟢 | 🟢 |
-| Hindi | 🟢 |  | 🟢 |
-| Kannada | 🟢 |  | 🟢 |
-| Malayalam | 🟢 |  | 🟢 |
-| Manipuri | 🟢 |  | 🟢 |
-| Marathi | 🟢 | 🟢 | 🟢 |
-| Oriya | 🟢 |  | 🟢 |
-| Punjabi | 🟢 |  | 🟢 |
-| Tamil | 🟢 | 🟢 | 🟢 |
-| Telegu | 🟢 | 🟢 | 🟢 |
-| Urdu | 🟢 |  | 🟢 |
+| English | ✅ | ✅ | ✅ |
+| Bengali | ✅ | ✅ | ✅ |
+| Bodo | ❌ | ❌ | ✅ |
+| Assamese | ✅ | ❌ | ✅ |
+| Gujarati | ✅ | ✅ | ✅ |
+| Hindi | ✅ | ❌ | ✅ |
+| Kannada | ✅ | ❌ | ✅ |
+| Malayalam | ✅ | ❌ | ✅ |
+| Manipuri | ✅ | ❌ | ✅ |
+| Marathi | ✅ | ✅ | ✅ |
+| Oriya | ✅ | ❌ | ✅ |
+| Punjabi | ✅ | ❌ | ✅ |
+| Tamil | ✅ | ✅ | ✅ |
+| Telegu | ✅ | ✅ | ✅ |
+| Urdu | ✅ | ❌ | ✅ |
 
-We can also compare the performance of Whisper API vs BHASHINI API when it comes to Automatic Speech Recognition (speech to text) applications. BHASHINI supports 14 Indic languages while Whisper API only 5 - English, Hindi, Kannada, Marathi, Tamil, and Urdu.
+Whisper API and BHASHINI API are both popular APIs for ASR applications. However, there are some key differences between the two APIs.
 
-This makes the BHASHINI-PaLM 2-BHASHINI pipeline a powerful open-source competitor when considering the closed source alternative using GPT and Whisper.
+**Language support:** BHASHINI supports 14 Indic languages, while Whisper API only supports 5. This makes BHASHINI a more attractive option for developers who need to support a wider range of languages.
+
+**Pipeline:** BHASHINI-PaLM 2-BHASHINI is an open-source pipeline that combines BHASHINI with PaLM 2, a large language model. This pipeline is capable of producing high-quality results with high speed. Whisper API, on the other hand, is a closed-source pipeline.
+
+**API calls:** BHASHINI can be used to perform ASR, NMT, and TTS with a single API call. This makes BHASHINI a more efficient API for developers who need to perform multiple tasks. 
+
+## Conclusion
+
+BHASHINI is a powerful open-source API for ASR applications. It supports a wider range of languages than Whisper API, and it can be used to perform multiple tasks with a single API call. If you are looking for an API that can support a wide range of languages and tasks, BHASHINI is a good option.
