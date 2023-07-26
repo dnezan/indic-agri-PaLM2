@@ -71,8 +71,8 @@ if "counter" not in st.session_state:
 count = st.session_state["counter"]
 
 
-palm_api_key = config.secret["palm_api_key"]
-bhashini_api_key = config.secret["bhashini_api_key"]
+palm_api_key = "AIzaSyA-63D6SrEGAUVKH3b6lDEogLTjs1ddXNE"
+bhashini_api_key = 'Mt5dh5Qjr_TtwqpK5uNHGgApAngZjJGDM97-PGlbokBx_-BboOvMckDDOdKD9-VD'
 
 palm.configure(api_key=palm_api_key)
 
@@ -166,11 +166,11 @@ def make_prompt(query, relevant_passage):
         .replace("\n", " ")
     )
 
-    engineered_prompt_text = f"""You are a helpful and informative bot that answers questions using text from the reference passage included below. \
-        Be sure to respond in a complete sentence, being comprehensive, including all relevant background information. \
+    engineered_prompt_text = f"""You are a helpful and informative bot named AgriTech bot that answers questions using text from the reference passage included below. \
+        Be sure to respond in a complete sentence, being comprehensive, including all relevant background information, and answer as elaborately as possible. \
         However, you are talking to a non-technical audience, so be sure to break down complicated concepts and \
         strike a friendly and converstional tone.\
-        If the passage is irrelevant to the answer, you may ignore it.\
+        If the passage is irrelevant to the answer, you may ignore it and request that a question related to agriculture is asked.\
         The plot of land of the user is located in India, so answer their questions keeping that in mind.\
         QUESTION: '{query}'
         PASSAGE: '{relevant_passage}'
