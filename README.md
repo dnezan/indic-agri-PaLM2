@@ -17,20 +17,17 @@
 
 Pip install all the package including in *requirements.txt* in a Python>=3.8 environment.
 ```sh
-git clone https://github.com/dnezan/...
+git clone https://github.com/dnezan/indic-agro-advisory
 pip install requirements.txt
 ```
-To use your Google Earth Engine service account credentials, make sure to authenticate your access by using the code below, and add your credentials as Streamlit Secrets if you are deploying on Streamlit Community Cloud. You can also use Azure Key Vault if you are deploying on Azure.
+Make sure to add your **PaLM API** key as well as your **BHASHINI MeitY API** key as Streamlit Secrets if you are deploying on Streamlit Community Cloud. You can also use Azure Key Vault if you are deploying on Azure.
 
+_config.py_
 ```python
-json_data = st.secrets["json_data"]
-# Preparing values
-json_object = json.loads(json_data, strict=False)
-service_account = st.secrets["service_account"]
-json_object = json.dumps(json_object)
-# Authorising the app
-credentials = ee.ServiceAccountCredentials(service_account, key_data=json_object)
-ee.Initialize(credentials)
+secret = dict(
+    palm_api_key = **********,
+    bhashini_api_key = **********
+)
 ```
 
 Replace your credentials as a **Secret** in TOML format.
@@ -55,3 +52,5 @@ service_account = '****.iam.gserviceaccount.com'
 ## Why?
 
 Good question.
+
+![screen](./img/screenshot.png)
