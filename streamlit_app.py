@@ -63,14 +63,6 @@ if "llm_history" not in st.session_state:
 def hide_examples():
     st.session_state.load_example += 1
 
-def inc_ctr():
-    st.session_state["counter"]  += 1
-
-if "counter" not in st.session_state:
-    st.session_state["counter"]  = 0
-count = st.session_state["counter"]
-
-
 palm_api_key = "AIzaSyA-63D6SrEGAUVKH3b6lDEogLTjs1ddXNE"
 bhashini_api_key = 'Mt5dh5Qjr_TtwqpK5uNHGgApAngZjJGDM97-PGlbokBx_-BboOvMckDDOdKD9-VD'
 
@@ -176,6 +168,7 @@ def make_prompt(query, relevant_passage):
         PASSAGE: '{relevant_passage}'
         ANSWER:
         """
+# add agricultural scientist
 
     prompt = textwrap.dedent(engineered_prompt_text).format(
         query=query, relevant_passage=escaped
@@ -394,7 +387,7 @@ with col1:
         col1_row5, col1_row6 = st.columns([6,1])
         with col1_row5:
             add_vertical_space(1)
-            prompt_from_user = st.text_input(":mag: Enter your question", label_visibility='collapsed', placeholder="Enter your question", key=f"input_count{count}")
+            prompt_from_user = st.text_input(":mag: Enter your question", label_visibility='collapsed', placeholder="Enter your question")
             original_prompt_from_user = prompt_from_user
             st.session_state.orig_query = prompt_from_user
         with col1_row6:
