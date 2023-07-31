@@ -34,6 +34,22 @@ secret = dict(
 )
 ```
 
+## How does it work?
+1.	Farmers access the web-based Streamlit app from their devices.
+2.	They interact with the app either by speaking their questions or typing them in the text box.
+3.	The app's powerful speech recognition or text processing module converts the input into a suitable format.
+4.	The PaLM-based vector database is queried to fetch the most accurate and context-specific responses to the farmer's queries.
+5.	The app presents the answers in both text and audio formats, catering to the user's language preference.
+6.	Farmers can implement the provided advice and insights to enhance their farming practices and increase productivity.
+
+![screen](./img/archtic.png)
+
+ASR stands for **Automatic Speech Recognition**. It is the process of converting spoken language into text. ASR is used in a variety of applications, such as voice search, dictation, and closed captioning.
+
+NMT stands for **Neural Machine Translation**. It is a type of machine translation that uses neural networks to translate text from one language to another. NMT is more accurate than traditional machine translation methods, and it is also able to handle more complex language structures.
+
+TTS stands for **Text-to-Speech**. It is the process of converting text into spoken language. TTS is used in a variety of applications, such as e-readers, audiobooks, and voice assistants.
+
 ## Features
 1.	**Multilingual Support:** Farmers can interact with the app using their preferred Indian language, either by speaking or typing their questions. The app supports a wide range of Indic languages, ensuring ease of use for farmers from diverse linguistic backgrounds.
 2.	**Voice Interaction:** Leveraging advanced speech recognition, the app allows farmers to interact through spoken queries, making it accessible and user-friendly, especially for those with limited literacy skills.
@@ -42,16 +58,6 @@ secret = dict(
 5.	**Text and Audio Responses:** The app ensures a holistic user experience by providing answers in both text and audio formats. Users can either read the response or listen to it in their chosen language, enhancing accessibility and convenience.
 6.	**Real-time Updates:** The Agri-Advisory for Farmers app is regularly updated with the latest agricultural insights and practices, ensuring that farmers receive the most relevant information to optimize their crop yield and farming success.
 7.	**User-Friendly Interface:** The intuitive Streamlit-based interface makes navigation seamless, allowing users to effortlessly seek guidance on diverse agricultural topics without any technical hurdles.
-
-## How does it work?
-![screen](./img/archtic.png)
-
-1.	Farmers access the web-based streamlit app from their devices.
-2.	They interact with the app either by speaking their questions or typing them in the text box.
-3.	The app's powerful speech recognition or text processing module converts the input into a suitable format.
-4.	The PaLM-based vector database is queried to fetch the most accurate and context-specific responses to the farmer's queries.
-5.	The app presents the answers in both text and audio formats, catering to the user's language preference.
-6.	Farmers can implement the provided advice and insights to enhance their farming practices and increase productivity.
 
 
 ## Why not just use GPT 4?
