@@ -12,6 +12,7 @@ import streamlit as st
 import geemap.colormaps as cm
 import geemap.foliumap as geemap
 import os
+import re
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
 import json
@@ -82,6 +83,12 @@ def mp3_to_wav(mp3_file, wav_file):
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
+    
+def count_tokens(passage):
+  tokens = re.findall(r"[\w']+|[.,!?]", passage)
+  number_of_tokens = len(tokens)
+
+  return number_of_tokens
 
 #st.set_page_config(layout="wide")
 st.set_page_config(layout="wide", initial_sidebar_state=st.session_state.sidebar_state)
@@ -294,15 +301,11 @@ def bhashini_asr(base64_input, input_language, asr_serviceid_val):
 
 def draw_examples():
     st.markdown(f"**<font size = 5>Try out these examples!**</font>", unsafe_allow_html=True)
-    st.write("How do I protect my millets against pests?")
-    st.write("திண்டுக்கல் வானிலை முன்னறிவிப்பு என்ன?")
-    st.write("వరి నాట్లు వేయడానికి ఉత్తమ సమయం ఏది?")
-    st.write("തിരുവനന്തപുരത്ത് എവിടെ നിന്ന് വളം വാങ്ങാമെന്ന് പറയൂ.")
-
-
-
-
-
+    st.code("How do I protect my millets against pests?")
+    st.code("திண்டுக்கல் வானிலை முன்னறிவிப்பு என்ன?")
+    st.code("వరి నాట్లు వేయడానికి ఉత్తమ సమయం ఏది?")
+    st.code("തിരുവനന്തപുരത്ത് എവിടെ നിന്ന് വളം വാങ്ങാമെന്ന് പറയൂ.")
+    st.code("यदि मैं सिंचित भूमि पर रहता हूँ तो मैं किस प्रकार का चावल बोऊँगा?")
 
 tagline = "FOR FARMERS IN INDIA"
 
@@ -412,8 +415,12 @@ with col1:
             except:
                 st.error("An error occured while recording your voice, please try again.")
         
-
+        with st.expander("LLM Parameters"):
+            user_temp = st.slider('Model temperature', 0, 130, 25)
         submitted = st.form_submit_button("Submit", on_click=hide_examples)
+        #st.slider(label, min_value=None, max_value=None, value=None, step=None, format=None, 
+        # key=None, help=None, on_change=None, args=None, kwargs=None, *, disabled=False, 
+        # label_visibility="visible")
         
 
        
@@ -450,6 +457,10 @@ with col1:
                         passage = find_best_passage(query, df)
 
                         prompt = make_prompt(query, passage)
+
+                        input_token_length = len(prompt)
+                        input_token_length = math.ceil(input_token_length/4)
+
                         text_models = [
                             m
                             for m in palm.list_models()
@@ -460,6 +471,7 @@ with col1:
 
                         temperature = 0.5
                         max_output_tokens = 100
+                        max_input_tokens = 8196
 
                         answer = palm.generate_text(
                             prompt=prompt,
@@ -482,13 +494,14 @@ with col1:
                         
                         with st.expander("See PALM2 model", expanded=False):
                             st.caption(f"**Model:** :green[{text_model.name}]")
-                            #st.caption(f"**Input Token Limit:** :green[{text_model.input_token_limit}]")
+                            st.caption(f"**Input Token Limit:** :green[{text_model.input_token_limit}]")
                             st.caption(f"**Output Token Limit:** :green[{text_model.output_token_limit}]")
                             st.caption(f"**Temperature:** :green[{text_model.temperature}]")
-                            #st.caption(f"**Top P:** :green[{text_model.top_p}]")
-                            #st.caption(f"**Top K:** :green[{text_model.top_k}]")
+                            st.caption(f"**Top P:** :green[{text_model.top_p}]")
+                            st.caption(f"**Top K:** :green[{text_model.top_k}]")
                         with st.chat_message("🧑🏽‍🌾"):
                             st.write(f"**{st.session_state.orig_query}**")
+                            st.caption(f"Input tokens = :green[{count_tokens(prompt)}]", help="1 token is around 4 characters in length")
                         with st.chat_message("💡"):
                             if input_language != "en":
                                 st.write(llm_response_tl)
@@ -511,8 +524,11 @@ with col1:
                                 else:
                                     st.caption(f"Output tokens = :green[{num_tokens}/{max_output_tokens}]", help="1 token is around 4 characters in length")
 
-                    except:
+                    except Exception as e:
                         st.error("An unexpected error occured. Please check your input.")
+                        st.code(e)
+                        #st.caption(f"Output tokens = :red[{input_token_length}/{max_input_tokens}]", help="1 token is around 4 characters in length")
+
 
     add_vertical_space(5)
 
