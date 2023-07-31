@@ -15,6 +15,8 @@
 
 ![screen](./img/screenshot.png)
 
+The Agri-Advisory for Farmers project is a powerful, user-friendly Streamlit app designed to assist farmers in making informed decisions regarding agriculture practices and crop-related queries. This cutting-edge application harnesses the power of Python, Streamlit, PaLM 2, and Bhashini to provide comprehensive agricultural guidance in multiple Indian languages.
+
 ## Installation
 
 Pip install all the package including in *requirements.txt* in a Python>=3.8 environment.
@@ -31,6 +33,26 @@ secret = dict(
     BHASHINI_api_key = **********
 )
 ```
+
+## Features
+1.	**Multilingual Support:** Farmers can interact with the app using their preferred Indian language, either by speaking or typing their questions. The app supports a wide range of Indic languages, ensuring ease of use for farmers from diverse linguistic backgrounds.
+2.	**Voice Interaction:** Leveraging advanced speech recognition, the app allows farmers to interact through spoken queries, making it accessible and user-friendly, especially for those with limited literacy skills.
+3.	**Text-based Queries:** In addition to voice, farmers can also input their questions through text, making it a versatile platform that caters to various user preferences.
+4.	**Comprehensive Agri-Advisory:** The app draws upon an extensive vector database to provide accurate and contextually relevant answers to farmers' questions. Powered by PaLM, a robust pre-trained language model, the responses are highly informative and up-to-date.
+5.	**Text and Audio Responses:** The app ensures a holistic user experience by providing answers in both text and audio formats. Users can either read the response or listen to it in their chosen language, enhancing accessibility and convenience.
+6.	**Real-time Updates:** The Agri-Advisory for Farmers app is regularly updated with the latest agricultural insights and practices, ensuring that farmers receive the most relevant information to optimize their crop yield and farming success.
+7.	**User-Friendly Interface:** The intuitive Streamlit-based interface makes navigation seamless, allowing users to effortlessly seek guidance on diverse agricultural topics without any technical hurdles.
+
+## How does it work?
+![screen](./img/archtic.png)
+
+1.	Farmers access the web-based streamlit app from their devices.
+2.	They interact with the app either by speaking their questions or typing them in the text box.
+3.	The app's powerful speech recognition or text processing module converts the input into a suitable format.
+4.	The PaLM-based vector database is queried to fetch the most accurate and context-specific responses to the farmer's queries.
+5.	The app presents the answers in both text and audio formats, catering to the user's language preference.
+6.	Farmers can implement the provided advice and insights to enhance their farming practices and increase productivity.
+
 
 ## Why not just use GPT 4?
 
@@ -72,8 +94,6 @@ Whisper API and BHASHINI API are both popular APIs for ASR applications. However
 
 **API calls:** BHASHINI can be used to perform ASR, NMT, and TTS with a single API call. This makes BHASHINI a more efficient API for developers who need to perform multiple tasks. 
 
-## Features
-Vector database querying, text input via typing or recording audio, returns answer in both chosen language and english, saves and displays history of prompts, generates audio response.
 
 ## Conclusion
 
