@@ -50,6 +50,10 @@ NMT stands for **Neural Machine Translation**. It is a type of machine translati
 
 TTS stands for **Text-to-Speech**. It is the process of converting text into spoken language. TTS is used in a variety of applications, such as e-readers, audiobooks, and voice assistants.
 
+We can illustrate how the system works by examining a screenshot of the app to what happens behind the scenes.
+
+![screen](./img/screen_irr.png)
+
 ![screen](./img/llmqueryarch.png)
 
 ## Features
