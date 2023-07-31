@@ -50,6 +50,8 @@ NMT stands for **Neural Machine Translation**. It is a type of machine translati
 
 TTS stands for **Text-to-Speech**. It is the process of converting text into spoken language. TTS is used in a variety of applications, such as e-readers, audiobooks, and voice assistants.
 
+![screen](./img/llmqueryarch.png)
+
 ## Features
 1.	**Multilingual Support:** Farmers can interact with the app using their preferred Indian language, either by speaking or typing their questions. The app supports a wide range of Indic languages, ensuring ease of use for farmers from diverse linguistic backgrounds.
 2.	**Voice Interaction:** Leveraging advanced speech recognition, the app allows farmers to interact through spoken queries, making it accessible and user-friendly, especially for those with limited literacy skills.
