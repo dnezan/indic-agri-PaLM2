@@ -1,0 +1,9 @@
+The AUV named ‘Neerakshi’ is a collaboration of Kolkata-based warshipmaker Garden Reach Shipbuilders and Engineers (GRSE) Ltd and MSME entity AEPL. An autonomous underwater vehicle (AUV) designed to detect mines and a first of its kind in the country was launched. Named “Neerakshi” meaning “Eyes in the Water” is first of its kind in the country and is expected to undergo user trials by the Indian Navy, Coast Guard, and Army before a commercial launch.
+
+Neerakshi-Details
+The 2.15m long AUV will have an endurance of nearly 4 hours and is capable of operating up to a depth of 300m.
+These AUVs once in operation by our Armed Forces, could play an important role in mine countermeasure operations and also make excellent reusable targets during Anti-Submarine Warfare (ASW) practices by warships.
+They can also be deployed for passive acoustic monitoring during which they could remain in position for prolonged durations, monitoring the possible movement of sub-surface platforms.
+This can be used for a variety of functions ranging from mine detection to mine disposal to underwater survey.
+Once the user trials are complete, and user requirements are incorporated, commercial production of the AUV will commence.
+Efforts are in place to increase its endurance by 200-300%, enabling it to be deployed for coastguard duties either from a mother ship or the coast.
