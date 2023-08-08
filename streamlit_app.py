@@ -43,14 +43,7 @@ import json
 import base64
 import streamlit as st
 
-import chromadb
-from chromadb.api.types import Documents, Embeddings
 
-from dotenv import load_dotenv, find_dotenv 
-load_dotenv(find_dotenv())
-
-palm_api_key = os.environ.get("palm_api_key")
-bhashini_api_key = os.environ.get("bhashini_api_key")
 
 # Initialize a session state variable that tracks the sidebar state (either 'expanded' or 'collapsed').
 if 'sidebar_state' not in st.session_state:
@@ -74,6 +67,8 @@ if "llm_history" not in st.session_state:
 def hide_examples():
     st.session_state.load_example += 1
 
+palm_api_key = "AIzaSyA-63D6SrEGAUVKH3b6lDEogLTjs1ddXNE"
+bhashini_api_key = 'Mt5dh5Qjr_TtwqpK5uNHGgApAngZjJGDM97-PGlbokBx_-BboOvMckDDOdKD9-VD'
 
 palm.configure(api_key=palm_api_key)
 
@@ -468,10 +463,13 @@ with col1:
                         input_token_length = len(prompt)
                         input_token_length = math.ceil(input_token_length/4)
 
-                        text_models = [m for m in palm.list_models() if "generateText" in m.supported_generation_methods]
+                        text_models = [
+                            m
+                            for m in palm.list_models()
+                            if "generateText" in m.supported_generation_methods
+                        ]
 
                         text_model = text_models[0]
-                        print(text_model)
 
                         temperature = user_temp
                         max_output_tokens = 1024
@@ -557,3 +555,8 @@ with st.sidebar:
     history_var = st.session_state.llm_history
     st.caption(history_var)
     st.download_button('Download history', history_var)
+
+
+
+
+
